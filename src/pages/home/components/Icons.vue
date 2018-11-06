@@ -80,29 +80,31 @@ export default {
         padding-bottom: 50%
         xbackground: green
         overflow: hidden
-    .icon
-        float: left 
-        width: 25%
-        padding-bottom: 25%
-        xbackground: red
-        position: relative
-        .icon-img
-            position: absolute 
-            top: 0
-            left: 0
-            right: 0
-            bottom: .44rem
-            xbackground: blue
-            .icon-img-content
-                display: block
-                margin: 0 auto
-                height: 100%
-            .icon-des
-                text-align: center
-                color: #333
-                line-height: .44rem
-                height: .44rem
-                ellipsis()
+    .icons
+        margin-top: .1rem
+        .icon
+            float: left 
+            width: 25%
+            padding-bottom: 25%
+            xbackground: red
+            position: relative
+            .icon-img
+                position: absolute 
+                top: 0
+                left: 0
+                right: 0
+                bottom: .44rem
+                xbackground: blue
+                .icon-img-content
+                    display: block
+                    margin: 0 auto
+                    height: 100%
+                .icon-des
+                    text-align: center
+                    color: #333
+                    line-height: .44rem
+                    height: .44rem
+                    ellipsis()
 
 </style>
 
