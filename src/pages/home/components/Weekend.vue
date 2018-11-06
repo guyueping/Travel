@@ -2,7 +2,7 @@
     <div>
         <div class="recommend-title">周末去哪儿</div> 
    <ul>
-       <li class="item border-bottom" v-for="item in recommendList" :key="item.id">
+       <li class="item border-bottom" v-for="item in list" :key="item.id">
             <div class="item-img-wrap">
                 <img :src="item.imgUrl" class="item-img">
             </div>
@@ -19,30 +19,8 @@
 <script>
 export default {
     name: 'HomeWeekend',
-    data () {
-        return {
-            recommendList: [{
-                id: '0001',
-                imgUrl: 'http://img1.qunarzz.com/sight/source/1505/4e/3e87ee62e59cdb.jpg_r_640x214_fe6cc902.jpg',
-                title: '北宫国家森林公园(AAAA景区)',
-                desc: '烂漫大力蓝首站，浪漫的海洋馆主题乐园烂漫大力蓝首站，浪漫的海洋馆主题乐园'
-            },{
-                id: '0002',
-                imgUrl: 'http://img1.qunarzz.com/sight/source/1510/c1/afe3ab32b3bc23.jpg_r_640x214_beb61760.jpg',
-                title: '杭州极地海洋世界',
-                desc: '杭州野生动物园成人票（含小火车、动物表演、游乐设施 )'
-            },{
-                id: '0003',
-                imgUrl: 'http://img1.qunarzz.com/sight/source/1505/9f/7d45cc38259e0.jpg_r_640x214_156f4299.jpg',
-                title: '印象西湖',
-                desc: '【刷身份证直接入园】杭州野生动物世界大学生票'
-            },{
-                id: '0004',
-                imgUrl: 'http://img1.qunarzz.com/sight/source/1505/a3/9c9d78e925e8bc.jpg_r_640x214_74656d68.jpg',
-                title: '杭州野生动物世界',
-                desc: '【免预约】杭州野生动物世界1大1小（亲子票）含小火车'
-            }]
-        }
+    props: {
+        list: Array
     }
 }
 </script>
@@ -53,11 +31,10 @@ export default {
         line-height : .8rem
         background: #eee
         text-indent: .2rem
-        margin-top: .2rem
     .item-img-wrap   
         overflow: hidden
         height: 0
-        padding-bottom: 33.9%
+        padding-bottom: 37.09%
         .item-img
             width: 100%
             padding: .1rem

@@ -2,7 +2,7 @@
     <div>
         <div class="recommend-title">热销推荐</div> 
    <ul>
-       <li class="item border-bottom" v-for="item in recommendList" :key="item.id">
+       <li class="item border-bottom" v-for="item in list" :key="item.id">
             <img :src="item.imgUrl" class="item-img">
             <div class="item-info">
                 <p class="item-title">{{item.title}}</p>
@@ -18,30 +18,8 @@
 <script>
 export default {
     name: 'HomeRecommend',
-    data () {
-        return {
-            recommendList: [{
-                id: '0001',
-                imgUrl: 'http://img1.qunarzz.com/sight/p0/1508/89/895a1b7add84f23faca053ce9e3153db.water.jpg_200x200_99ae30ee.jpg',
-                title: '北宫国家森林公园(AAAA景区)',
-                desc: '烂漫大力蓝首站，浪漫的海洋馆主题乐园烂漫大力蓝首站，浪漫的海洋馆主题乐园'
-            },{
-                id: '0002',
-                imgUrl: 'http://img1.qunarzz.com/sight/p0/1508/89/895a1b7add84f23faca053ce9e3153db.water.jpg_200x200_99ae30ee.jpg',
-                title: '杭州极地海洋世界',
-                desc: '杭州野生动物园成人票（含小火车、动物表演、游乐设施 )'
-            },{
-                id: '0003',
-                imgUrl: 'http://img1.qunarzz.com/sight/p0/1508/89/895a1b7add84f23faca053ce9e3153db.water.jpg_200x200_99ae30ee.jpg',
-                title: '印象西湖',
-                desc: '【刷身份证直接入园】杭州野生动物世界大学生票'
-            },{
-                id: '0004',
-                imgUrl: 'http://img1.qunarzz.com/sight/p0/1508/89/895a1b7add84f23faca053ce9e3153db.water.jpg_200x200_99ae30ee.jpg',
-                title: '杭州野生动物世界',
-                desc: '【免预约】杭州野生动物世界1大1小（亲子票）含小火车'
-            }]
-        }
+    props: {
+        list: Array
     }
 }
 </script>
