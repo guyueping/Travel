@@ -23,8 +23,16 @@ export default {
     },
     data () {
         return {
-            touchStatus: false
+            touchStatus: false,
+            startY: 0,
+            timer: null
         }
+    },
+    //初次渲染的时候，cities里面传过来的是空的，字母列表还未展示
+    //当City组件里执行完ajax，cities数据改变，Alphabet会重新渲染，
+    //当Alphabe重新渲染之后updated钩子函数便会执行
+    updated () {
+        this.startY = this.$refs['A'][0].offsetTop
     },
     computed: {
         letters() {
@@ -44,13 +52,20 @@ export default {
         },
         handleTouchMove (e) {
             if (this.touchStatus) {
-                const startY = this.$refs['A'][0].offsetTop
-                const touchY = e.touches[0].clientY - 79
-                const index = Math.floor((touchY - startY) / 20)
-                if (index >= 0 && index < this.letters.length) {
-                   this.$emit('change', this.letters[index]) 
+                if (this.timer) {
+                    clearTimeout(this.timer)
                 }
+                this.timer = setTimeout(() => {
+                        const touchY = e.touches[0].clientY - 79
+                        const index = Math.floor((touchY - this.startY) / 20)
+                        if (index >= 0 && index < this.letters.length) {
+                            this.$emit('change', this.letters[index]) 
+                            }
+                    }, 16)
             }
+            
+            
+            
         },
         handleTouchEnd () {
             this.touchStatus = false
