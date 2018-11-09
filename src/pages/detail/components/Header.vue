@@ -11,7 +11,10 @@
             class="header-fixed" 
             v-show="!showAbs"
             :style="opacityStyle">
-        景点详情
+                <router-link tag="div" to="/">
+                    <div class="iconfont header-fixed-back">&#xe624;</div>
+                </router-link>
+                景点详情                
         </div>
     </div>
 </template>
@@ -61,6 +64,7 @@ export default {
             color: #fff
             font-size: .4rem
     .header-fixed
+        z-index: 99
         height: .86rem
         line-height: .86rem
         text-align: center
