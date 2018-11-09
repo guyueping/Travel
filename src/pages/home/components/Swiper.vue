@@ -38,7 +38,7 @@ export default {
     background: #eee
   .wrapper
     width: 100%
-    padding-bottom: 26.7%
+    padding-bottom: 31%
     height: 0
     overflow: hidden
     background: #eee  
